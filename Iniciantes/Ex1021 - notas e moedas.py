@@ -1,7 +1,6 @@
 N = float(input())
 inteiro = N // 1
 decimal = N - inteiro
-
 cem = inteiro // 100
 resto = inteiro - (cem * 100)
 
@@ -43,8 +42,9 @@ resto -= mdez * 0.1
 
 mcinco = resto // 0.05
 resto -= mcinco * 0.05
-
+print(resto)
 mum = resto / 0.01
+print(mum)
 
 print("MOEDAS:")
 print(f"{um:.0f} moeda(s) de R$ 1.00")
