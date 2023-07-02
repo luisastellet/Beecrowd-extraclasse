@@ -1,17 +1,25 @@
-# (paes * tamanho) / pessoas = tamanho_fatia
-pessoas = int(input())
-sanduiches = int(input())
-tamanhos = list(map(int,input().split())) #tamanho da lista = sanduiches (de 0 até sanduiches-1)
-tamanhos.sort() # 98 99 100
-tamanhos_inv = list(reversed(tamanhos)) # 100 99 98
-medida = tamanhos_inv[1]
-pedacos = 0
-while pedacos < pessoas:
-    pedacos = 0
-    for i in range(sanduiches):
-        pedacos += tamanhos_inv[i] // medida
-        if tamanhos_inv[i] == medida and pedacos == pessoas:
+N = int(input())
+K = int(input())
+v = [int(i) for i in input().split()]
+def fatia(x):
+    total = 0
+    for i in v:
+        total += i // x
+    if total >= N: return True
+    else: return False
+
+inicio = 0
+fim = (sum(v) // N) + 1
+meio = (inicio + fim) // 2
+
+while True:
+    if fatia(meio):
+        if not fatia(meio+1):
+            print(meio)
             break
-    if pedacos < pessoas:
-        medida -= 1
-print(medida)
+        else:
+            inicio = meio
+            meio = (inicio + fim) // 2
+    else:
+        fim = meio
+        meio = (inicio + fim) // 2

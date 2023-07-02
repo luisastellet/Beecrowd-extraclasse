@@ -1,17 +1,20 @@
-N = int(input()) #número de raios registrados
-coordenadas = []
-raios = 0
-for i in range(N):
-    coordenadas.append(input()) #coordenadas no quadrante
-for j in range(N):
-    if coordenadas.count(coordenadas[j]) > 1:
-        raios = 2
+n = int(input())
+
+coord = [[False] * 501 for _ in range(501)]
+
+result = False
+
+for _ in range(n):
+    x, y = map(int, input().split())
+
+    if coord[x][y]:
+        result = True
         break
 
-if raios == 2:
-    print('1')
+    coord[x][y] = True
+
+if result:
+    print("1")
 else:
-    print('0')
-
-
+    print("0")
 
