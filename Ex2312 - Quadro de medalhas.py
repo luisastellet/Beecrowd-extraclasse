@@ -29,8 +29,18 @@ for j in range(len(matriz)-1):
                         aux = matriz[i]
                         matriz[i] = matriz[i+1]
                         matriz[i+1] = aux
+
+# for i in range(len(matriz)):
+#     resp = ''
+#     for j in range(len(matriz[i])):
+#         resp += str(matriz[i][j]) + ' '
+#     print(resp.strip())
+
+
+for j in range(len(matriz)):
+    for x in range(len(matriz[j])):
+        matriz[j][x] = str(matriz[j][x])
+
+
 for i in range(len(matriz)):
-    resp = ''
-    for j in range(len(matriz[i])):
-        resp += str(matriz[i][j]) + ' '
-    print(resp.strip())
+    print(' '.join(matriz[i]))

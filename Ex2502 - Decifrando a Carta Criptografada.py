@@ -19,8 +19,9 @@ while(True):
             frase = input().split()
 
             # cada palavra separando em letras
-            for i in range(len(frase)):
-                frase[i] = list(frase[i])
+            for k in range(len(frase)):
+                frase[k] = list(frase[k])
+                
 
             for y in range(len(frase)):
                 for x in range(len(frase[y])):
